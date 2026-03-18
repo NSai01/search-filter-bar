@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <h1>Online fashion store</h1>
+        </div>
+        <nav class="top-links" aria-label="Quick links">
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">Sneakers</a>
+          <a href="#">Accessories</a>
+        </nav>
+      </header>
+
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Fresh arrivals</p>
+          <h2>Discover standout looks with sharp filters and fast search.</h2>
+          <p>
+            Browse curated fashion picks, switch categories instantly, and
+            search the catalog.
+          </p>
+        </div>
+
+        <div id="search-container" class="search-panel">
+          <label class="search-label" for="search-input">Search products</label>
+          <div class="search-row">
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Search for shirts, jackets, watches..."
+            />
+            <button id="search" type="button">Search</button>
+          </div>
+          <div class="search-meta">
+            <span id="result-count">0 items</span>
+            <span>Free shipping over $99</span>
+          </div>
+        </div>
+      </section>
+
+      <main class="catalog-layout">
+        <aside class="filters-panel">
+          <div>
+            <p class="panel-label">Refine by</p>
+            <h3>Categories</h3>
+          </div>
+          <div id="buttons" class="filter-buttons">
+            <button class="button-value" onclick="filterProduct('all')">All</button>
+            <button class="button-value" onclick="filterProduct('Topwear')">
+              Topwear
+            </button>
+            <button class="button-value" onclick="filterProduct('Bottomwear')">
+              Bottomwear
+            </button>
+            <button class="button-value" onclick="filterProduct('Jacket')">
+              Jacket
+            </button>
+            <button class="button-value" onclick="filterProduct('Watch')">
+              Watch
+            </button>
+          </div>
+
+          <div class="promo-card">
+            <p class="panel-label">Trend edit</p>
+            <h4>Monotone layers with clean silhouettes</h4>
+            <p>Keep it bold, structured, and city-ready.</p>
+          </div>
+        </aside>
+
+        <section class="results-panel">
+          <div class="results-header">
+            <div>
+              <p class="panel-label">Search results</p>
+              <h3>Curated catalog</h3>
+            </div>
+            <p id="active-filter-label" class="active-filter">Showing all</p>
+          </div>
+          <div id="products"></div>
+          <p id="empty-state" class="empty-state hide">
+            No products matched your search. Try another keyword or switch the
+            category.
+          </p>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
